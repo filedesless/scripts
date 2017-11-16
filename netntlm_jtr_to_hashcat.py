@@ -11,7 +11,11 @@ def convert(line):
   arr = line.split('$')
   user = arr[0].split(':')[1].strip()
   return "{}::::{}:{}".format(user, arr[3].strip(), arr[2].strip())
-  
-for line in sys.stdin:
+
+file = sys.stdin
+if (len(sys.argv) > 1 ) :
+  path = sys.argv[1]
+  file = open(path, 'r')
+for line in file  
   if "jtr" in line:
     print(convert(line))
