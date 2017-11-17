@@ -13,9 +13,9 @@ def convert(line):
   return "{}::::{}:{}".format(user, arr[3].strip(), arr[2].strip())
 
 file = sys.stdin
-if (len(sys.argv) > 1 ) :
+if (len(sys.argv) > 1 ):
   path = sys.argv[1]
   file = open(path, 'r')
-for line in file  
+for line in file:
   if "jtr" in line:
     print(convert(line))
