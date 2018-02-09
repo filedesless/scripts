@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+% for headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% for automatas
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+% metadata
+\title{Devoir 1}
+\author{Félix Larose-Gervais}
+\date{01 Javier 2049}
+
+% defining variables
+\makeatletter
+\let \theTitle  \@title
+\let \theAuthor \@author
+\let \theDate   \@date
+\def \theIDUL   {XXX XXX XXX}
+\makeatother
+
+% headers
+\lhead{\theTitle}
+\rhead{\theAuthor \\ \theIDUL}
+
+% start
+\begin{document}
+
+% first page
+\begin{titlepage}
+\maketitle
+\thispagestyle{empty}
+\end{titlepage}
+
+\section{Question 1}
+
+\subsection{Premier truc}
+
+\subsection{Deuxième truc}
+
+\newpage
+
+\section{Question 2}
+
+
+
+\end{document}
