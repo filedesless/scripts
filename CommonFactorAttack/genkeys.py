@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import sys
+
 # terribly unsecure rsa demystification for myself
 
 def gcd(u, v):
@@ -8,7 +10,11 @@ def gcd(u, v):
 # Choose two differents large
 # prime numbers
 
-p, q = 4079, 4729
+#p, q = 4079, 4729
+if len(sys.argv) < 3:
+    p, q = 997, 109 
+else: 
+    p, q = int(sys.argv[1]), int(sys.argv[2])
 print("p, q =>", p, q)
 
 # Calculate n = pq
