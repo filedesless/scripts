@@ -72,8 +72,8 @@ main (int argc, char *argv[])
   key->iqmp = iqmp;
 
   /* Output the private key in human-readable and PEM forms */
-  RSA_print_fp (stdout, key, 5);
-  printf("\n");
+  //RSA_print_fp (stdout, key, 5);
+  //printf("\n");
   PEM_write_RSAPrivateKey (stdout, key, NULL, NULL, 0, 0, NULL);
 
   /* Release allocated objects */
