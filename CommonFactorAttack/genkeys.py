@@ -4,15 +4,27 @@ import sys
 
 # terribly unsecure rsa demystification for myself
 
+# extended euclidian algo
+def egcd(b, n):
+    (x0, x1, y0, y1) = (1, 0, 0, 1)
+    while n != 0:
+        (q, b, n) = (b // n, n, b % n)
+        (x0, x1) = (x1, x0 - q * x1)
+        (y0, y1) = (y1, y0 - q * y1)
+    #return (b, x0, y0)
+    return abs(x0)
+
+# euclidian algo
 def gcd(u, v):
     return u if v is 0 else gcd(v, u % v)
 
 # Choose two differents large
 # prime numbers
 
-#p, q = 4079, 4729
 if len(sys.argv) < 3:
-    p, q = 997, 109 
+    p, q = 4079, 4729
+    #p, q = 997, 661
+    #p, q = 661, 167
 else: 
     p, q = int(sys.argv[1]), int(sys.argv[2])
 print("p, q =>", p, q)
@@ -31,8 +43,6 @@ for e in range(2, t):
         break
 print("e =>", e)
 
-# Compute d to satisfy de = 1 + kt
-for d in range(n):
-    if (d * e) % t == 1:
-        break
+# Compute ex + dy = 1 (mod t)
+d = egcd(e, t)
 print("d =>", d)

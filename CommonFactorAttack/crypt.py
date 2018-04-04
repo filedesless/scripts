@@ -2,9 +2,19 @@
 
 import sys
 
-def crypt(n: int, e: int, m: int) -> int:
-    return (m ** e) % n
+# efficient modular exponentiation algo
+def pow(b: int, e: int, m: int) -> int:
+    res = 1
+    b = b % m
+    while e > 0:
+        if e & 1 == 1:
+            res = (res * b) % m
+        e >>= 1
+        b = (b * b) % m
+    return res
 
+def crypt(n: int, e: int, m: int) -> int:
+    return pow(m, e, n)
 
 if len(sys.argv) < 4:
     print("usage: ./crypt.py n e mesage")
