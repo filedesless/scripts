@@ -1,4 +1,7 @@
 #!/usr/bin/env ansible-playbook
+# This is a YAML comment
+
+--- # start of file
 
 - name: Configure webserver with nginx
   hosts: webservers
